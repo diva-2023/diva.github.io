@@ -65,14 +65,15 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <ul class="nav nav-pills nav-justified" style="margin-bottom:15px">
                     <li>
-                        <a href="">
-                            <img src="./DiVA/images/paper.png" height="60px"><br>
+                        <a href="" target=”_blank”>
+                            <img src="./DiVA/images/paper.png" height="75px"><br>
                             <h4><strong>Paper</strong></h4>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="./DiVA/images/data.png" height="60px"><br>
+                        <a href="https://app.globus.org/file-manager?origin_id=a8d4bc3a-e80b-472f-ab1e-3e806cc12aeb&path=%2F"
+                            target=”_blank”>
+                            <img src="./DiVA/images/data.png" height="75px"><br>
                             <h4><strong>Data</strong></h4>
                         </a>
                     </li>
@@ -86,7 +87,9 @@
                 <h3>
                     Video
                 </h3>
-                <img src="./DiVA/images/grey.png" class="img-responsive" alt="overview">
+                <video controls style="width: 100%;">
+                    <source src="./DiVA/images/main_hd.mp4" type=video/mp4>
+                </video>
             </div>
         </div>
 
@@ -126,22 +129,95 @@
                 </h3>
 
                 <p class="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    Our data is hosted on Globus and can be found <a
+                        href="https://app.globus.org/file-manager?origin_id=a8d4bc3a-e80b-472f-ab1e-3e806cc12aeb&path=%2F"
+                        target=”_blank”>here</a>.
+                    To download the data, first log into the Globus Web App. Once you are logged in, you will see a
+                    directory containing two <span style="font-family:'Courier New'">.tar</span> files. The dynamic data
+                    and results are stored in the the _____ file,
+                    and the static data and results are stored in the <span
+                        style="font-family:'Courier New'">final-static-dataset.tar.gz</span> file. Please note that
+                    the dynamic dataset
+                    is ____ GB and the static dataset is 20 GB.
                 </p>
             </div>
         </div>
 
-
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Dynamic Dataset Examples
+                </h3>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/wolf-ingp.mp4" type=video/mp4>
+                        </video>
+                        <p>Wolf Per Frame Instant NGP</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/wolf-mixvoxel.mp4" type=video/mp4>
+                        </video>
+                        <p>Wolf Mixvoxels</p>
+                    </div>
+                </span>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 365px; margin: 5px;">
+                            <source src="./DiVA/images/xylophone_ingp.mp4" type=video/mp4>
+                        </video>
+                        <p>Xylophone Per Frame Instant NGP</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 365px; margin: 5px;">
+                            <source src="./DiVA/images/xylophone_mixvoxels.mp4" type=video/mp4>
+                        </video>
+                        <p>Xylophone Mixvoxels</p>
+                    </div>
+                </span>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                <h3>
+                    Static Dataset Examples
+                </h3>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/car00_random.mp4" type=video/mp4>
+                        </video>
+                        <p>car00_random Instant NGP</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/fruit00_random.mp4" type=video/mp4>
+                        </video>
+                        <p>fruit00_random Instant NGP</p>
+                    </div>
+                </span>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/scene00_clean.mp4" type=video/mp4>
+                        </video>
+                        <p>scene00_clean Instant NGP</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/scene00_messy2.mp4" type=video/mp4>
+                        </video>
+                        <p>scene00_messy2 Instant NGP</p>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                The website template was borrowed from <a href="http://mgharbi.com/" target=”_blank”>Michaël Gharbi</a>.
                 <p></p>
             </div>
         </div>
