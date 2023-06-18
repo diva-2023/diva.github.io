@@ -65,7 +65,7 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <ul class="nav nav-pills nav-justified" style="margin-bottom:15px">
                     <li>
-                        <a href="" target=”_blank”>
+                        <a href="https://openreview.net/attachment?id=AmNwkv6Yra&name=pdf" target=”_blank”>
                             <img src="./DiVA/images/paper.png" height="75px"><br>
                             <h4><strong>Paper</strong></h4>
                         </a>
@@ -88,7 +88,7 @@
                     Video
                 </h3>
                 <video controls style="width: 100%;">
-                    <source src="./DiVA/images/main_hd.mp4" type=video/mp4>
+                    <source src="./DiVA/images/diva-360_1080p_60fps.mp4" type=video/mp4>
                 </video>
             </div>
         </div>
@@ -125,20 +125,26 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Donwloading the Data
+                    Downloading the Data
                 </h3>
 
                 <p class="text-justify">
                     Our data is hosted on Globus and can be found <a
                         href="https://app.globus.org/file-manager?origin_id=a8d4bc3a-e80b-472f-ab1e-3e806cc12aeb&path=%2F"
                         target=”_blank”>here</a>.
-                    To download the data, first log into the Globus Web App. Once you are logged in, you will see a
-                    directory containing two <span style="font-family:'Courier New'">.tar</span> files. The dynamic data
-                    and results are stored in the the _____ file,
-                    and the static data and results are stored in the <span
+                    This link will take you to a sign in page. You can either sign in through a listed institution,
+                    through any Google account, or through an ORCID iD. Once you sign in, you will be able to download
+                    the data. The dynamic data and results can be found in the
+                    <span style="font-family:'Courier New'">assets/objects</span> directory which stores each sequences
+                    in a separate directory. For each sequence, the data can be found in the
+                    <span style="font-family:'Courier New'">dynamic_data</span> folder, the
+                    per frame I-NGP results can be found in the <span style="font-family:'Courier New'">I-NGP</span>
+                    folders, and the Mixvoxels results can be found in the <span
+                        style="font-family:'Courier New'">MixVoxels</span> folder.
+                    The static data and results are stored in the <span
                         style="font-family:'Courier New'">final-static-dataset.tar.gz</span> file. Please note that
-                    the dynamic dataset
-                    is ____ GB and the static dataset is 20 GB.
+                    the dynamic data and results are a total of 3TB and the static data and results are a total of
+                    20 GB.
                 </p>
             </div>
         </div>
@@ -146,18 +152,58 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Dynamic Dataset Examples
+                    Dynamic Data Examples
                 </h3>
+                <p>Note: these videos have sound</p>
                 <span style="display: flex; flex-wrap: wrap;">
                     <div style="width: 365px; margin: 5px; text-align: center;">
                         <video controls autoplay loop muted style="width: 100%;">
-                            <source src="./DiVA/images/wolf-ingp.mp4" type=video/mp4>
+                            <source src="./DiVA/images/put_fruit_data.mp4" type=video/mp4>
+                        </video>
+                        <p>Put Fruit Data</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/penguin_data.mp4" type=video/mp4>
+                        </video>
+                        <p>Penguin Data</p>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Dynamic Baseline Examples
+                </h3>
+                <p>Note: these videos have sound</p>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/put_fruit_result.mp4" type=video/mp4>
+                        </video>
+                        <p>Put Fruit Per Frame Instant NGP</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/penguin_results.mp4" type=video/mp4>
+                        </video>
+                        <p>Penguin Per Frame Instant NGP</p>
+                    </div>
+                </span>
+
+                <h4>Comparison Between Instant NGP and Mixvoxels</h4>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="./DiVA/images/wolf_ingp.mp4" type=video/mp4>
                         </video>
                         <p>Wolf Per Frame Instant NGP</p>
                     </div>
                     <div style="width: 365px; margin: 5px; text-align: center;">
                         <video controls autoplay loop muted style="width: 100%;">
-                            <source src="./DiVA/images/wolf-mixvoxel.mp4" type=video/mp4>
+                            <source src="./DiVA/images/wolf_mixvoxels.mp4" type=video/mp4>
                         </video>
                         <p>Wolf Mixvoxels</p>
                     </div>
@@ -182,7 +228,36 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Static Dataset Examples
+                    Static Data Examples
+                </h3>
+                <p>Note: only 48/53 cameras are shown</p>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <img src="./DiVA/images/car00_random_collage.png" width="100%">
+                        <p>car00_random data</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <img src="./DiVA/images/fruit00_random_collage.png" width="100%">
+                        <p>fruit00_random data</p>
+                    </div>
+                </span>
+                <span style="display: flex; flex-wrap: wrap;">
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <img src="./DiVA/images/scene00_clean_collage.png" width="100%">
+                        <p>scene00_clean data</p>
+                    </div>
+                    <div style="width: 365px; margin: 5px; text-align: center;">
+                        <img src="./DiVA/images/scene00_messy2_collage.png" width="100%">
+                        <p>scene00_messy2 data</p>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Static Baseline Examples
                 </h3>
                 <span style="display: flex; flex-wrap: wrap;">
                     <div style="width: 365px; margin: 5px; text-align: center;">
