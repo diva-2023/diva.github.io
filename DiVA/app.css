@@ -12,3 +12,14 @@
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
+details {
+    background: #eee;
+    cursor: pointer;
+    margin: 5px 0 5px 0;
+    padding: 7px;
+}
+
+ul {
+    list-style: none
+}
