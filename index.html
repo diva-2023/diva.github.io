@@ -143,6 +143,196 @@
                 <h3>
                     Downloading the Data
                 </h3>
+
+                <p>
+                    We store out dynamic and static dataset on AWS, so to download the data to your local machine, we
+                    use AWS CLI. You will first need to install AWS CLI. Follow the instructions depending on your
+                    machine. You can find the installation instructions <a
+                        href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html"
+                        target="_blank">here</a>.
+                </p>
+
+                <p>
+                    To transfer the whole dynamic or static dataset, use the following command:
+                <pre>$ aws s3 cp s3://diva360/&lt;dynamic, static&gt; &lt;path-to-destination&gt; --recursive --no-sign-request</pre>
+
+                To transfer a specific directory, use the following command:
+                <pre>$ aws s3 cp s3://diva360/&lt;path-to-directory&gt; &lt;path-to-destination&gt; --recursive --no-sign-request</pre>
+                </p>
+
+                Note: the whole dynamic dataset is about 3.5 TB and the whole static dataset is about 16 GB.<br>
+                Here are the details for the dynamic and static dataset structures:
+                <details>
+                    <summary style="display:list-item">
+                        Dynamic Dataset Structure
+                    </summary>
+                    <ul>
+                        <li>
+                            |_ assets
+                            <ul>
+                                <li>|_ all_videos (I-NGP and MixVoxels rendered videos)</li>
+                                <li>
+                                    |_ calib
+                                    <ul>
+                                        <li>|_ optim_params.txt(refined camera parameters)</li>
+                                        <li>|_ params.txt (unrefined camera parameters)</li>
+                                        <li>|_ transforms.json (unrefined camera parameters)</li>
+                                        <li>|_ transforms_optim.json (refined camera parameters)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    |_ objects
+                                    <ul>
+                                        <li>
+                                            |_ &lt;dynamic sequence&gt;
+                                            <ul>
+                                                <li>
+                                                    |_ calib
+                                                    <ul>
+                                                        <li>|_ transforms.json (refined camera parameters without
+                                                            distortion factor)</li>
+                                                        <li>|_ transforms_optim.json (refined camera paramters with
+                                                            distortion factor)</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    |_ dynamic_data
+                                                    <ul>
+                                                        <li>|_ frames_1 (undistored, segmented images of 41 cameras)
+                                                        </li>
+                                                        <li>
+                                                            |_ I-NGP
+                                                            <ul>
+                                                                <li>|_ test (test view rendering)</li>
+                                                                <li>|_ train (per-frame I-NGP weights)</li>
+                                                                <li>|_ traj (trajectory rendering)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            |_ mixvoxels
+                                                            <ul>
+                                                                <li>
+                                                                    |_ &lt;dynamic_sequence_*&gt; (mixvoxels of 150
+                                                                    frames)
+                                                                    <ul>
+                                                                        <li>|_ &lt;dynamic_sequence_*.th&gt; (model
+                                                                            checkpoint)</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li>|_ imgs_hr_spiral_all (spiral trajectory rendering
+                                                                    at 2k resolution)
+                                                                </li>
+                                                                <li>|_ imgs_test_all (test view renderings)</li>
+                                                                <li>|_ imgs_test_all_white (test view rendering with
+                                                                    white background)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>|_ transforms_circle.json (circular rendering trajectory
+                                                            parameters)</li>
+                                                        <li>|_ transforms_circle_hr.json (circular trajectory parameters
+                                                            at 2k resolution_</li>
+                                                        <li>|_ transforms_spiral_hr.json (spiral trajectory parameters
+                                                            at 2k resolution)</li>
+                                                        <li>|_ transforms_test.json (camera parameters of 6 testing
+                                                            views)</li>
+                                                        <li>|_ transforms_train.json (35 training views)</li>
+                                                        <li>|_ transforms_val.json (same as transforms_test.json)</li>
+                                                    </ul>
+                                                </li>
+                                                <li>|_ image (resampled raw data at 30 FPS)</li>
+                                                <li>|_ segmented_ngp (segmented, resampled data at 30 FPS)</li>
+                                                <li>|_ transforms.json (same as calib/transforms.json)</li>
+                                                <li>|_ masks (manual segmentation maps for hourglass, world globe, and
+                                                    plasma ball)</li>
+                                            </ul>
+                                        </li>
+                                        <li>...</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            |_ raw_data
+                            <ul>
+                                <li>|_ synced (synced raw data without audio)</li>
+                                <li>|_ syncedaudio (raw data synced with audio)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+                <details>
+                    <summary style="display:list-item">
+                        Static Dataset Structure
+                    </summary>
+                    <ul>
+                        <li>
+                            |_ static-dataset
+                            <ul>
+                                <li>
+                                    |_ &lt;object/scene&gt;
+                                    <ul>
+                                        <li>
+                                            |_ calib
+                                            <ul>
+                                                <li>|_ params.txt (camera parameters)</li>
+                                                <li>|_ to_skip.txt (for some objects/scenes, cameras to skip)</li>
+                                            </ul>
+                                        </li>
+                                        <li>|_ image (raw image data)</li>
+                                        <li>|_ refined_segmentation (segmented data)</li>
+                                        <li>|_ desciption.json (text description)</li>
+                                        <li>
+                                            |_ I-NGP
+                                            <ul>
+                                                <li>|_ train (checkpoint and sigma values for canonicalization)</li>
+                                                <li>|_ traj (trajectory renderings)</li>
+                                                <li>|_ &lt;object/scene&gt;.csv (evaluation metric results and other
+                                                    training information)</li>
+                                                <li>|_ mesh.ply (object/scene mesh)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>...</li>
+                            </ul>
+                        </li>
+                        <li>
+                            |_ canonical-dataset
+                            <ul>
+                                <li>
+                                    |_ &lt;object category&gt;
+                                    <ul>
+                                        <li>|_ train (organized training data)</li>
+                                        <li>|_ val (organized val data)</li>
+                                        <li>|_ data (all data)</li>
+                                        <li>|_ &lt;object category&gt;.h5 (to calculate metrics)</li>
+                                        <li>
+                                            |_ results
+                                            <ul>
+                                                <li>|_ canonical_rendering (resulting canonical renderings)</li>
+                                                <li>|_ checkpoints (model checkpoints)</li>
+                                                <li>|_ &lt;object category&gt;.h5 (to calculate metrics)</li>
+                                                <li>|_ &lt;object category&gt;_canonical.h5 (to calculate
+                                                    canonicalization metrics)</li>
+                                                <li>|_ &lt;object category&gt;_rotations.h5 (to calculate rotation
+                                                    metrics)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>...</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Downloading the Data
+                </h3>
                 <p>
                     We store our dynamic and static dataset on Globus, so to download the data to your local machine, we
                     use Globus Command Line Interface (Globus-CLI) and Globus Connect Personal (GCP). You will first
@@ -360,7 +550,7 @@
                     </ul>
                 </details>
             </div>
-        </div>
+        </div> -->
 
 
         <!-- <div class="row">
