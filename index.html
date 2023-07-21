@@ -160,7 +160,7 @@
                 <pre>$ aws s3 cp s3://diva360/&lt;path-to-directory&gt; &lt;path-to-destination&gt; --recursive --no-sign-request</pre>
                 </p>
 
-                Note: the whole dynamic dataset is about 3.5 TB and the whole static dataset is about 16 GB.<br>
+                Note: the whole dynamic dataset is about 3.5 TB and the whole static dataset is about 16 GB.<br> <br>
                 Here are the details for the dynamic and static dataset structures:
                 <details>
                     <summary style="display:list-item">
@@ -324,6 +324,151 @@
                             </ul>
                         </li>
                     </ul>
+                </details>
+                <br>
+                Here are the Dynamic and Static Object/Scene Categories:
+                <details>
+                    <summary style="display:list-item">
+                        Dynamic Sequences
+                    </summary>
+                    <div style="display: flex; margin-right: 40px;">
+                        <div>
+                            <ul>
+                                <li>battery</li>
+                                <li>blue_car</li>
+                                <li>bunny</li>
+                                <li>chess</li>
+                                <li>clock</li>
+                                <li>dog</li>
+                                <li>drum</li>
+                                <li>flip_book</li>
+                                <li>horse</li>
+                                <li>hour_glass</li>
+                                <li>jenga</li>
+                                <li>k1_double_punch</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>k1_hand_stand</li>
+                                <li>k1_push_up</li>
+                                <li>keyboard_mouse</li>
+                                <li>kindle</li>
+                                <li>maracas</li>
+                                <li>pan</li>
+                                <li>peel_apple</li>
+                                <li>penguin</li>
+                                <li>piano</li>
+                                <li>plasma_ball</li>
+                                <li>plasma_ball_clip</li>
+                                <li>poker</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>pour_salt</li>
+                                <li>pour_tea</li>
+                                <li>put_candy</li>
+                                <li>put_fruit</li>
+                                <li>red_car</li>
+                                <li>scissor</li>
+                                <li>slice_apple</li>
+                                <li>soda</li>
+                                <li>stirling</li>
+                                <li>tambourine</li>
+                                <li>tea</li>
+                                <li>tornado</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>trex</li>
+                                <li>truck</li>
+                                <li>unlock</li>
+                                <li>wall_e</li>
+                                <li>wolf</li>
+                                <li>world_globe</li>
+                                <li>writing_1</li>
+                                <li>writing_2</li>
+                                <li>xylophone</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <details>
+                    <summary style="display:list-item">
+                        Static Object Categories and Scenes
+                    </summary>
+                    Static object names are structured as follows: <br>
+                    &emsp;&lt;category&gt;&lt;instance-number&gt;_&lt;canonical, random&gt; <br>
+                    &emsp;ex. "cabinet00_canonical" "cabinet00_random" <br>
+                    Scene names are structured as follows: <br>
+                    &emsp;scene&lt;instance-number&gt;_&lt;clean, messy1, messy2, messy3, messy4, messy5&gt; <br>
+                    &emsp;ex. "scene00_clean" "scene00_messy1" <br> <br>
+                    Here are the object categories and scene instance numbers:
+                    <div style="display: flex; margin-right: 40px;">
+                        <div>
+                            <ul>
+                                <li>cabinet &#40;0-09&#41;</li>
+                                <li>car &#40;0-12&#41;</li>
+                                <li>chair &#40;0-04&#41;</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>couch &#40;0-09&#41;</li>
+                                <li>fruit &#40;0-03&#41;</li>
+                                <li>keyboard &#40;0-03&#41;</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>mouse &#40;0-05&#41;</li>
+                                <li>mug &#40;0-08&#41;</li>
+                                <li>plane &#40;0-09&#41;</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>scene &#40;0-04&#41;</li>
+                                <li>table &#40;0-08&#41;</li>
+                                <li>utensil &#40;0-14&#41;</li>
+                            </ul>
+                        </div>
+                </details>
+                <details>
+                    <summary style="display:list-item">
+                        Canonical Object Categories
+                    </summary>
+                    <div style="display: flex; margin-right: 40px;">
+                        <div>
+                            <ul>
+                                <li>cabinet</li>
+                                <li>car</li>
+                                <li>chair</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>couch</li>
+                                <li>fruit</li>
+                                <li>keyboard</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>mouse</li>
+                                <li>mug</li>
+                                <li>plane</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>table</li>
+                                <li>utensil</li>
+                            </ul>
+                        </div>
+                    </div>
                 </details>
             </div>
         </div>
