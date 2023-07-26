@@ -34,9 +34,9 @@ function datasetClick(id) {
         selectDropdownOption("none");
     }
     if (staticClass != "none") { // if static sequence is set, reset
-        selectStaticClassOption("none");
-        selectStaticInstanceOption("none");
-        selectStaticPosOption("none");
+        selectStaticDropdownOption("none", "static-class");
+        selectStaticDropdownOption("none", "static-instance");
+        selectStaticDropdownOption("none", "static-pos");
         showStaticClass = false;
         showStaticInstance = false;
         showStaticPos = false;
@@ -265,7 +265,6 @@ function selectStaticDropdownOption(id, dropdownMenu) {
     var sequence = document.querySelector(sequenceButtonSelection);
     var headerSelection = sequenceButtonSelection + " .sequence-header";
     var seqHeader = document.querySelector(headerSelection);
-    console.log(headerSelection);
     seqHeader.innerHTML = element.innerHTML;
     if (!sequence.classList.contains("selected")) {
         sequence.classList.add("selected");
