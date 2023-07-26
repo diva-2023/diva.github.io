@@ -30,13 +30,22 @@ function datasetClick(id) {
         }
     }
 
-    if (sequenceVar != "none") { // if the sequence is set, reset
-        selectDropdownOption("none");
-    }
-    if (staticClass != "none") { // if static sequence is set, reset
-        selectStaticDropdownOption("none", "static-class");
-        selectStaticDropdownOption("none", "static-instance");
-        selectStaticDropdownOption("none", "static-pos");
+    if (datasetVar == "static") { // reset static sequence
+        if (sequenceVar != "none") {
+            selectStaticDropdownOption("none", "static-class");
+            selectStaticDropdownOption("none", "static-instance");
+            selectStaticDropdownOption("none", "static-pos");
+        }
+        showStaticClass = false;
+        showStaticInstance = false;
+        showStaticPos = false;
+        showStaticDropdown();
+    } else {
+        if (sequenceVar != "none") { // reset dynamic or canonincal sequence
+            selectDropdownOption("none");
+        }
+        showDropBool = false;
+        showDropdown();
     }
 
     datasetVar = id;

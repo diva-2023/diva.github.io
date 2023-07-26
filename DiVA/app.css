@@ -151,3 +151,17 @@ button {
     white-space: nowrap;
     overflow-x: scroll;
 }
+
+@media (max-width: 990px) {
+    .static-dropdown-wrapper {
+        width: 80px;
+    }
+
+    .static-dropdown-content {
+        margin-top: 0px;
+    }
+
+    .dropdown-content {
+        width: 180px;
+    }
+}
