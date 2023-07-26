@@ -68,19 +68,6 @@
                             <h4><strong>Paper</strong></h4>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="https://g-6fc7e5.56197.5898.data.globus.org/DiVA-360/dynamic_data.tar" target=”_blank”>
-                            <img src="./DiVA/images/data.png" height="75px"><br>
-                            <h4><strong>Dynamic Data</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://g-6fc7e5.56197.5898.data.globus.org/DiVA-360/final-static-dataset.tar.gz"
-                            target=”_blank”>
-                            <img src="./DiVA/images/data.png" height="75px"><br>
-                            <h4><strong>Static Data</strong></h4>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
             <br>
@@ -159,13 +146,16 @@
                     </div>
                     <div class="select-row">
                         <div class="heading">Sequence</div>
-                        <div class="options sequence">
-                            <button class="dropbtn col-md-12 option sequence-option" id="sequence-button"
+                        <!-- Dynamic Options -->
+                        <div class="options sequence-options show-dropdown" id="dynamic-menu">
+                            <button class="dropbtn col-md-12 option sequence-option sequence-button"
                                 onclick="clickDropdown()">
-                                <span id="sequence-header">None</span>
+                                <span class="sequence-header">None</span>
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content" id="dynamic">
+                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                                </div>
                                 <div class="dropdown-option" id="battery" onclick="selectDropdownOption(this.id)">
                                     Battery
                                 </div>
@@ -283,106 +273,112 @@
                                 <div class="dropdown-option" id="xylophone" onclick="selectDropdownOption(this.id)">
                                     Xylophone
                                 </div>
-                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                            </div>
+                        </div>
+
+                        <!-- Static Options -->
+                        <div class="options sequence-options" id="static-menu">
+                            <!-- Object/Scene -->
+                            <div class="static-dropdown-wrapper static-class">
+                                <button class="dropbtn col-md-4 option sequence-option sequence-button"
+                                    onclick="clickStaticDropdown('static-class')">
+                                    <span class="sequence-header">None</span>
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="static-dropdown-content" id="static-class">
+                                    <div class="static-dropdown-option" id="none"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        None
+                                    </div>
+                                    <div class="static-dropdown-option" id="cabinet"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Cabinet
+                                    </div>
+                                    <div class="static-dropdown-option" id="car"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Car
+                                    </div>
+                                    <div class="static-dropdown-option" id="chair"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Chair
+                                    </div>
+                                    <div class="static-dropdown-option" id="couch"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Couch
+                                    </div>
+                                    <div class="static-dropdown-option" id="fruit"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Fruit
+                                    </div>
+                                    <div class="static-dropdown-option" id="keyboard"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Keyboard
+                                    </div>
+                                    <div class="static-dropdown-option" id="mouse"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Mouse
+                                    </div>
+                                    <div class="static-dropdown-option" id="mug"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Mug
+                                    </div>
+                                    <div class="static-dropdown-option" id="plane"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Plane
+                                    </div>
+                                    <div class="static-dropdown-option" id="scene"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Scene
+                                    </div>
+                                    <div class="static-dropdown-option" id="table"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Table
+                                    </div>
+                                    <div class="static-dropdown-option" id="utensil"
+                                        onclick="selectStaticDropdownOption(this.id, 'static-class')">
+                                        Utensil
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dropdown-content" id="static">
-                                <div class="dropdown-option" id="cabinet00_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet00_canonical</div>
-                                <div class="dropdown-option" id="cabinet00_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet00_random</div>
-                                <div class="dropdown-option" id="cabinet01_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet01_canonical</div>
-                                <div class="dropdown-option" id="cabinet01_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet01_random</div>
-                                <div class="dropdown-option" id="cabinet02_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet02_canonical</div>
-                                <div class="dropdown-option" id="cabinet02_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet02_random</div>
-                                <div class="dropdown-option" id="cabinet03_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet03_canonical</div>
-                                <div class="dropdown-option" id="cabinet03_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet03_random</div>
-                                <div class="dropdown-option" id="cabinet04_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet04_canonical</div>
-                                <div class="dropdown-option" id="cabinet04_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet04_random</div>
-                                <div class="dropdown-option" id="cabinet05_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet05_canonical</div>
-                                <div class="dropdown-option" id="cabinet05_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet05_random</div>
-                                <div class="dropdown-option" id="cabinet06_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet06_canonical</div>
-                                <div class="dropdown-option" id="cabinet06_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet06_random</div>
-                                <div class="dropdown-option" id="cabinet07_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet07_canonical</div>
-                                <div class="dropdown-option" id="cabinet07_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet07_random</div>
-                                <div class="dropdown-option" id="cabinet08_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet08_canonical</div>
-                                <div class="dropdown-option" id="cabinet08_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet08_random</div>
-                                <div class="dropdown-option" id="cabinet09_canonical"
-                                    onclick="selectDropdownOption(this.id)">cabinet09_canonical</div>
-                                <div class="dropdown-option" id="cabinet09_random"
-                                    onclick="selectDropdownOption(this.id)">cabinet09_random</div>
-                                <div class="dropdown-option" id="car00_canonical"
-                                    onclick="selectDropdownOption(this.id)">car00_canonical</div>
-                                <div class="dropdown-option" id="car00_random" onclick="selectDropdownOption(this.id)">
-                                    car00_random</div>
-                                <div class="dropdown-option" id="car01_canonical"
-                                    onclick="selectDropdownOption(this.id)">car01_canonical</div>
-                                <div class="dropdown-option" id="car01_random" onclick="selectDropdownOption(this.id)">
-                                    car01_random</div>
-                                <div class="dropdown-option" id="car02_canonical"
-                                    onclick="selectDropdownOption(this.id)">car02_canonical</div>
-                                <div class="dropdown-option" id="car02_random" onclick="selectDropdownOption(this.id)">
-                                    car02_random</div>
-                                <div class="dropdown-option" id="car03_canonical"
-                                    onclick="selectDropdownOption(this.id)">car03_canonical</div>
-                                <div class="dropdown-option" id="car03_random" onclick="selectDropdownOption(this.id)">
-                                    car03_random</div>
-                                <div class="dropdown-option" id="car04_canonical"
-                                    onclick="selectDropdownOption(this.id)">car04_canonical</div>
-                                <div class="dropdown-option" id="car04_random" onclick="selectDropdownOption(this.id)">
-                                    car04_random</div>
-                                <div class="dropdown-option" id="car05_canonical"
-                                    onclick="selectDropdownOption(this.id)">car05_canonical</div>
-                                <div class="dropdown-option" id="car05_random" onclick="selectDropdownOption(this.id)">
-                                    car05_random</div>
-                                <div class="dropdown-option" id="car06_canonical"
-                                    onclick="selectDropdownOption(this.id)">car06_canonical</div>
-                                <div class="dropdown-option" id="car06_random" onclick="selectDropdownOption(this.id)">
-                                    car06_random</div>
-                                <div class="dropdown-option" id="car07_canonical"
-                                    onclick="selectDropdownOption(this.id)">car07_canonical</div>
-                                <div class="dropdown-option" id="car07_random" onclick="selectDropdownOption(this.id)">
-                                    car07_random</div>
-                                <div class="dropdown-option" id="car08_canonical"
-                                    onclick="selectDropdownOption(this.id)">car08_canonical</div>
-                                <div class="dropdown-option" id="car08_random" onclick="selectDropdownOption(this.id)">
-                                    car08_random</div>
-                                <div class="dropdown-option" id="car09_canonical"
-                                    onclick="selectDropdownOption(this.id)">car09_canonical</div>
-                                <div class="dropdown-option" id="car09_random" onclick="selectDropdownOption(this.id)">
-                                    car09_random</div>
-                                <div class="dropdown-option" id="car10_canonical"
-                                    onclick="selectDropdownOption(this.id)">car10_canonical</div>
-                                <div class="dropdown-option" id="car10_random" onclick="selectDropdownOption(this.id)">
-                                    car10_random</div>
-                                <div class="dropdown-option" id="car11_canonical"
-                                    onclick="selectDropdownOption(this.id)">car11_canonical</div>
-                                <div class="dropdown-option" id="car11_random" onclick="selectDropdownOption(this.id)">
-                                    car11_random</div>
-                                <div class="dropdown-option" id="car12_canonical"
-                                    onclick="selectDropdownOption(this.id)">car12_canonical</div>
-                                <div class="dropdown-option" id="car12_random" onclick="selectDropdownOption(this.id)">
-                                    car12_random</div>
-                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                            <!-- Instance Number -->
+                            <div class="static-dropdown-wrapper static-instance">
+                                <button class="dropbtn col-md-4 option sequence-option sequence-button"
+                                    onclick="clickStaticDropdown('static-instance')">
+                                    <span class="sequence-header">None</span>
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="static-dropdown-content" id="static-instance">
+                                    <div class="dropdown-option" id="none"
+                                        onclick="selectStaticInstanceOption(this.id)">None
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Canonical/Random -->
+                            <div class="static-dropdown-wrapper static-pos">
+                                <button class="dropbtn col-md-4 option sequence-option sequence-button"
+                                    onclick="clickStaticDropdown('static-pos')">
+                                    <span class="sequence-header">None</span>
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="static-dropdown-content" id="static-pos">
+                                    <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">
+                                        None
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Canonical Options -->
+                        <div class="options sequence-options" id="canonical-menu">
+                            <button class="dropbtn col-md-12 option sequence-option sequence-button"
+                                onclick="clickDropdown()">
+                                <span class="sequence-header">None</span>
+                                <i class="fa fa-caret-down"></i>
+                            </button>
                             <div class="dropdown-content" id="canonical">
+                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                                </div>
                                 <div class="dropdown-option" id="cabinet" onclick="selectDropdownOption(this)">Cabinet
                                 </div>
                                 <div class="dropdown-option" id="car" onclick="selectDropdownOption(this.id)">Car</div>
@@ -405,10 +401,7 @@
                                 <div class="dropdown-option" id="utensil" onclick="selectDropdownOption(this.id)">
                                     Utensil
                                 </div>
-                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
-                                </div>
                             </div>
-                            <!-- <div class="col-md-12 option sequence-option" id="sequence">Sequence</div> -->
                         </div>
                     </div>
                     <div class="select-row">
@@ -427,55 +420,6 @@
                     </div>
                 </div>
                 <br>
-                <!-- <div class="select-row">
-                    <div class="col-md-3 headings">
-                        <div class="col-md-12 title-block">
-                            <div class="option-text">Dataset</div>
-                        </div>
-                        <div class="col-md-12 title-block">
-                            <div class="option-text os-text">Whole/Sequence</div>
-                        </div>
-                        <div class="col-md-12 title-block">
-                            <div class="option-text">Data/Results</div>
-                        </div>
-                        <div class="col-md-12 title-block command-block">
-                            <div class="option-text command-text">Run this Command:</div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-9">
-                        <div class="selectable">
-                            <div class="col-md-4 option block version selected" id="dynamic">
-                                <div class="option-text">Dynamic</div>
-                            </div>
-                            <div class="col-md-4 option block version" id="static">
-                                <div class="option-text">Static</div>
-                            </div>
-                            <div class="col-md-4 option block version" id="canonical">
-                                <div class="option-text">Canonical</div>
-                            </div>
-                        </div>
-                        <div class="selectable">
-                            <div class="col-md-12 option block" id="sequence">
-                                <div class="option-text">Sequence</div>
-                            </div>
-                        </div>
-                        <div class="selectable">
-                            <div class="col-md-6 option block" id="data">
-                                <div class="option-text">Data</div>
-                            </div>
-                            <div class="col-md-6 option block" id="result">
-                                <div class="option-text">Result</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="command-container">
-                                <div class="col-md-12" id="command">aws s3 cp s3://diva360/dynamic
-                                    &lt;path-to-destination&gt; --recursive --no-sign-request</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
             <div class="col-md-8 col-md-offset-2">
@@ -801,263 +745,6 @@
                 </details>
             </div>
         </div>
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Downloading the Data
-                </h3>
-                <p>
-                    We store our dynamic and static dataset on Globus, so to download the data to your local machine, we
-                    use Globus Command Line Interface (Globus-CLI) and Globus Connect Personal (GCP). You will first
-                    need to install GCP. Follow these instructions depending on your machine:
-                <ul>
-                    <li><a href="https://docs.globus.org/how-to/globus-connect-personal-mac/" target="_blank">Mac</a>
-                    </li>
-                    <li><a href="https://docs.globus.org/how-to/globus-connect-personal-windows/"
-                            target="_blank">Windows</a></li>
-                    <li><a href="https://docs.globus.org/how-to/globus-connect-personal-linux/"
-                            target="_blank">Linux</a></li>
-                </ul>
-
-                Note: When you are installing GCP, you will have to name your collection/endpoint. You are free to name
-                it however you choose, but we suggest naming it "&lt;first name&gt; &lt;last name&gt; personal
-                machine". <br>
-
-                Next, you will need to install Globus-CLI and login. Run the following commands: <br>
-                <pre>$ pip install globus-cli<br>$ globus login</pre>
-                This will take you to a login page. You can either log in through a listed institution,
-                through any Google account, or through an ORCID iD. After logging in, you will see a terms of
-                service page. To continue, click "Allow". <br>
-
-                To download the data, you will be copying the data from the DiVA360 endpoint to the endpoint you just
-                created on your local machine when you installed GCP. First, setup the DiVA360 endpoint:
-                <pre>$ diva360_ep=1c8e9e50-d2b6-46cf-a81a-1ce023812799</pre>
-                Next, setup your personal endpoint:
-                <pre>$ globus endpoint search &lt;collection/endpoint name when setting up GCP&gt;<br>$ personal_ep=&lt;endpoint ID&gt;</pre>
-
-                <b>Important Note: To transfer to your GCP endpoint, the GCP software must be running and connected for
-                    the transfer to complete. However, you can close your terminal after the transfer has started. </b>
-                <br>
-
-                To transfer the whole dynamic or static dataset, use the following command:
-                <pre>$ globus transfer $diva360_ep:/&lt;dynamic or static&gt; $personal_ep:&lt;path to destination&gt;/&lt;dynamic or static&gt; --recursive</pre>
-
-                You can also transfer an individual file or folder from the dataset (note that the "--recursive" flag is
-                only needed for folders):
-                <pre>$ globus transfer $diva360_ep:&lt;path to file or folder&gt; $personal_ep:&lt;path to destination&gt;/&lt;file or folder name&gt; --recursive</pre>
-
-                You can also transfer multiple files or folders at once using the batch transfer feature. Here is an
-                example:
-                <pre>$ globus transfer --batch batch_transfer.txt $diva360_ep $personal_ep</pre>
-                Assuming you have the following batch_transfer.txt file:
-                <pre># to copy a file<br>&lt;path to file&gt; &lt;path to destination&gt;/&lt;file name&gt;<br># to copy a folder<br>&lt;path to folder&gt; &lt;path to destination&gt;/&lt;folder name&gt; --recursive</pre>
-
-                To check the status of your transfer, use the following command:
-                <pre>$ globus task show &lt;task ID&gt;</pre>
-
-                Note: the whole dynamic dataset is about 3.5 TB and the whole static dataset is about 16 GB
-                </p>
-
-                Here are the details for the dynamic and static dataset structures:
-                <details>
-                    <summary style="display:list-item">
-                        Dynamic Dataset Structure
-                    </summary>
-                    <ul>
-                        <li>
-                            |_ assets
-                            <ul>
-                                <li>|_ all_videos (I-NGP and MixVoxels rendered videos)</li>
-                                <li>
-                                    |_ calib
-                                    <ul>
-                                        <li>|_ optim_params.txt(refined camera parameters)</li>
-                                        <li>|_ params.txt (unrefined camera parameters)</li>
-                                        <li>|_ transforms.json (unrefined camera parameters)</li>
-                                        <li>|_ transforms_optim.json (refined camera parameters)</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    |_ objects
-                                    <ul>
-                                        <li>
-                                            |_ &lt;dynamic sequence&gt;
-                                            <ul>
-                                                <li>
-                                                    |_ calib
-                                                    <ul>
-                                                        <li>|_ transforms.json (refined camera parameters without
-                                                            distortion factor)</li>
-                                                        <li>|_ transforms_optim.json (refined camera paramters with
-                                                            distortion factor)</li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    |_ dynamic_data
-                                                    <ul>
-                                                        <li>|_ frames_1 (undistored, segmented images of 41 cameras)
-                                                        </li>
-                                                        <li>
-                                                            |_ I-NGP
-                                                            <ul>
-                                                                <li>|_ test (test view rendering)</li>
-                                                                <li>|_ train (per-frame I-NGP weights)</li>
-                                                                <li>|_ traj (trajectory rendering)</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            |_ mixvoxels
-                                                            <ul>
-                                                                <li>
-                                                                    |_ &lt;dynamic_sequence_*&gt; (mixvoxels of 150
-                                                                    frames)
-                                                                    <ul>
-                                                                        <li>|_ &lt;dynamic_sequence_*.th&gt; (model
-                                                                            checkpoint)</li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li>|_ imgs_hr_spiral_all (spiral trajectory rendering
-                                                                    at 2k resolution)
-                                                                </li>
-                                                                <li>|_ imgs_test_all (test view renderings)</li>
-                                                                <li>|_ imgs_test_all_white (test view rendering with
-                                                                    white background)</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>|_ transforms_circle.json (circular rendering trajectory
-                                                            parameters)</li>
-                                                        <li>|_ transforms_circle_hr.json (circular trajectory parameters
-                                                            at 2k resolution_</li>
-                                                        <li>|_ transforms_spiral_hr.json (spiral trajectory parameters
-                                                            at 2k resolution)</li>
-                                                        <li>|_ transforms_test.json (camera parameters of 6 testing
-                                                            views)</li>
-                                                        <li>|_ transforms_train.json (35 training views)</li>
-                                                        <li>|_ transforms_val.json (same as transforms_test.json)</li>
-                                                    </ul>
-                                                </li>
-                                                <li>|_ image (resampled raw data at 30 FPS)</li>
-                                                <li>|_ segmented_ngp (segmented, resampled data at 30 FPS)</li>
-                                                <li>|_ transforms.json (same as calib/transforms.json)</li>
-                                                <li>|_ masks (manual segmentation maps for hourglass, world globe, and
-                                                    plasma ball)</li>
-                                            </ul>
-                                        </li>
-                                        <li>...</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            |_ raw_data
-                            <ul>
-                                <li>|_ synced (synced raw data without audio)</li>
-                                <li>|_ syncedaudio (raw data synced with audio)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </details>
-                <details>
-                    <summary style="display:list-item">
-                        Static Dataset Structure
-                    </summary>
-                    <ul>
-                        <li>
-                            |_ static-dataset
-                            <ul>
-                                <li>
-                                    |_ &lt;object/scene&gt;
-                                    <ul>
-                                        <li>
-                                            |_ calib
-                                            <ul>
-                                                <li>|_ params.txt (camera parameters)</li>
-                                                <li>|_ to_skip.txt (for some objects/scenes, cameras to skip)</li>
-                                            </ul>
-                                        </li>
-                                        <li>|_ image (raw image data)</li>
-                                        <li>|_ refined_segmentation (segmented data)</li>
-                                        <li>|_ desciption.json (text description)</li>
-                                        <li>
-                                            |_ I-NGP
-                                            <ul>
-                                                <li>|_ train (checkpoint and sigma values for canonicalization)</li>
-                                                <li>|_ traj (trajectory renderings)</li>
-                                                <li>|_ &lt;object/scene&gt;.csv (evaluation metric results and other
-                                                    training information)</li>
-                                                <li>|_ mesh.ply (object/scene mesh)</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>...</li>
-                            </ul>
-                        </li>
-                        <li>
-                            |_ canonical-dataset
-                            <ul>
-                                <li>
-                                    |_ &lt;object category&gt;
-                                    <ul>
-                                        <li>|_ train (organized training data)</li>
-                                        <li>|_ val (organized val data)</li>
-                                        <li>|_ data (all data)</li>
-                                        <li>|_ &lt;object category&gt;.h5 (to calculate metrics)</li>
-                                        <li>
-                                            |_ results
-                                            <ul>
-                                                <li>|_ canonical_rendering (resulting canonical renderings)</li>
-                                                <li>|_ checkpoints (model checkpoints)</li>
-                                                <li>|_ &lt;object category&gt;.h5 (to calculate metrics)</li>
-                                                <li>|_ &lt;object category&gt;_canonical.h5 (to calculate
-                                                    canonicalization metrics)</li>
-                                                <li>|_ &lt;object category&gt;_rotations.h5 (to calculate rotation
-                                                    metrics)</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>...</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </details>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Downloading the Data
-                </h3>
-                <p>
-                    The dynamic dataset is very large, so we currently release just the data and audio (not results).
-                    The dynamic data and audio can be directly downloaded using this
-                    <a href="https://g-6fc7e5.56197.5898.data.globus.org/DiVA-360/dynamic_data.tar"
-                        target="_blank">link</a>.
-                    All dynamic sequences can be found in the <span style="font-family:'Courier New'">synced</span>
-                    folder, and all corresponding audio files can be found in the <span
-                        style="font-family:'Courier New'">syncedaudio</span> folder. Please note that all of the data
-                    totals about 750 GB.
-                </p>
-
-                <p class="text-justify">
-                    The static data, static results, canonical data, and canonical results can be directly downloaded
-                    using this
-                    <a href="https://g-6fc7e5.56197.5898.data.globus.org/DiVA-360/final-static-dataset.tar.gz"
-                        target="_blank">link</a>.
-                    All static data can be found in the <span style="font-family:'Courier New'">data</span> folder, and
-                    all corresponding results can be found in the <span style="font-family:'Courier New'">results</span>
-                    folder. All canonical data can be found in the <span
-                        style="font-family:'Courier New'">canonical_data</span> folder, and all corresponding results
-                    can be found in the <span style="font-family:'Courier New'">canonical_results</span> folder.
-                    Please note that the static data, static results, canonical data, and canonical results are a total
-                    of about 16 GB.
-                </p>
-            </div>
-        </div> -->
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
