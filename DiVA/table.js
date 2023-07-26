@@ -37,9 +37,6 @@ function datasetClick(id) {
         selectStaticDropdownOption("none", "static-class");
         selectStaticDropdownOption("none", "static-instance");
         selectStaticDropdownOption("none", "static-pos");
-        showStaticClass = false;
-        showStaticInstance = false;
-        showStaticPos = false;
     }
 
     datasetVar = id;
