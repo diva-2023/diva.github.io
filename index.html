@@ -141,7 +141,7 @@
                         <div class="options dataset">
                             <div class="col-md-4 option dataset-option selected" id="dynamic">Dynamic</div>
                             <div class="col-md-4 option dataset-option" id="static">Static</div>
-                            <div class="col-md-4 option dataset-option" id="canonical">Canonical</div>
+                            <div class="col-md-4 option dataset-option" id="canonical">Static-Canonical</div>
                         </div>
                     </div>
                     <div class="select-row">
@@ -150,11 +150,11 @@
                         <div class="options sequence-options show-dropdown" id="dynamic-menu">
                             <button class="dropbtn col-md-12 option sequence-option sequence-button"
                                 onclick="clickDropdown()">
-                                <span class="sequence-header">None</span>
+                                <span class="sequence-header">All</span>
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content" id="dynamic">
-                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                                <div class="dropdown-option" id="all" onclick="selectDropdownOption(this.id)">All
                                 </div>
                                 <div class="dropdown-option" id="battery" onclick="selectDropdownOption(this.id)">
                                     Battery
@@ -282,13 +282,13 @@
                             <div class="static-dropdown-wrapper static-class">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-class')">
-                                    <span class="sequence-header">None</span>
+                                    <span class="sequence-header">All</span>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="static-dropdown-content" id="static-class">
-                                    <div class="static-dropdown-option" id="none"
+                                    <div class="static-dropdown-option" id="all"
                                         onclick="selectStaticDropdownOption(this.id, 'static-class')">
-                                        None
+                                        All
                                     </div>
                                     <div class="static-dropdown-option" id="cabinet"
                                         onclick="selectStaticDropdownOption(this.id, 'static-class')">
@@ -344,12 +344,12 @@
                             <div class="static-dropdown-wrapper static-instance">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-instance')">
-                                    <span class="sequence-header">None</span>
+                                    <span class="sequence-header">All</span>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="static-dropdown-content" id="static-instance">
-                                    <div class="dropdown-option" id="none"
-                                        onclick="selectStaticInstanceOption(this.id)">None
+                                    <div class="dropdown-option" id="all" onclick="selectStaticInstanceOption(this.id)">
+                                        All
                                     </div>
                                 </div>
                             </div>
@@ -357,27 +357,26 @@
                             <div class="static-dropdown-wrapper static-pos">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-pos')">
-                                    <span class="sequence-header">None</span>
+                                    <span class="sequence-header">All</span>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="static-dropdown-content" id="static-pos">
-                                    <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">
-                                        None
+                                    <div class="dropdown-option" id="all" onclick="selectDropdownOption(this.id)">
+                                        All
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- Canonical Options -->
                         <div class="options sequence-options" id="canonical-menu">
                             <button class="dropbtn col-md-12 option sequence-option sequence-button"
                                 onclick="clickDropdown()">
-                                <span class="sequence-header">None</span>
+                                <span class="sequence-header">All</span>
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content" id="canonical">
-                                <div class="dropdown-option" id="none" onclick="selectDropdownOption(this.id)">None
+                                <div class="dropdown-option" id="all" onclick="selectDropdownOption(this.id)">All
                                 </div>
                                 <div class="dropdown-option" id="cabinet" onclick="selectDropdownOption(this)">Cabinet
                                 </div>
@@ -423,9 +422,9 @@
             </div>
 
             <div class="col-md-8 col-md-offset-2">
-                Note: the whole dynamic dataset is about 3.5 TB and the static + canonical dataset combined is about
-                16 GB.<br> <br>
-                Here are the details for the dynamic, static, and canonical dataset structures:
+                Note: the whole dynamic dataset is about 3.5 TB and the static + static-canonical dataset combined is
+                about 16 GB.<br> <br>
+                Here are the details for the dynamic, static, and static-canonical dataset structures:
                 <details>
                     <summary style="display:list-item">
                         Dynamic Dataset Structure
@@ -567,7 +566,7 @@
                 </details>
                 <details>
                     <summary style="display:list-item">
-                        Canonical Dataset Structure
+                        Static-Canonical Dataset Structure
                     </summary>
                     <ul>
                         <li>
@@ -600,7 +599,7 @@
                     </ul>
                 </details>
                 <br>
-                Here are the dynamic, static, and canonical object/scene categories:
+                Here are the dynamic, static, and static-canonical object/scene categories:
                 <details>
                     <summary style="display:list-item">
                         Dynamic Sequences
@@ -712,7 +711,7 @@
                 </details>
                 <details>
                     <summary style="display:list-item">
-                        Canonical Object Categories
+                        Static-Canonical Object Categories
                     </summary>
                     Note: the fruit and mug categories don't have results
                     <div class="categories">

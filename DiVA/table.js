@@ -1,15 +1,15 @@
 // keeps track of current selections
 var datasetVar = "dynamic";
-var sequenceVar = "none";
-var dataResultVar = "none";
+var sequenceVar = "all";
+var dataResultVar = "all";
 var selectionType = "dynamic-menu";
 var showDropBool = false; // for dynamic and canonical
 var showStaticClass = false; // for static dropdown categories
 var showStaticInstance = false; // for static instance categories
 var showStaticPos = false; // for static position catgories
-var staticClass = "none";
-var staticInstance = "none";
-var staticPos = "none";
+var staticClass = "all";
+var staticInstance = "all";
+var staticPos = "all";
 
 // ----------------------------- Dataset Toggle ----------------------------- //
 var dynamic = document.getElementById("dynamic");
@@ -31,18 +31,18 @@ function datasetClick(id) {
     }
 
     if (datasetVar == "static") { // reset static sequence
-        if (sequenceVar != "none") {
-            selectStaticDropdownOption("none", "static-class");
-            selectStaticDropdownOption("none", "static-instance");
-            selectStaticDropdownOption("none", "static-pos");
+        if (sequenceVar != "all") {
+            selectStaticDropdownOption("all", "static-class");
+            selectStaticDropdownOption("all", "static-instance");
+            selectStaticDropdownOption("all", "static-pos");
         }
         showStaticClass = false;
         showStaticInstance = false;
         showStaticPos = false;
         showStaticDropdown();
     } else {
-        if (sequenceVar != "none") { // reset dynamic or canonincal sequence
-            selectDropdownOption("none");
+        if (sequenceVar != "all") { // reset dynamic or canonincal sequence
+            selectDropdownOption("all");
         }
         showDropBool = false;
         showDropdown();
@@ -119,7 +119,7 @@ function selectDropdownOption(id) {
     // sets the sequence variable
     sequenceVar = id;
 
-    if (id == "none") {
+    if (id == "all") {
         if (sequence.classList.contains("selected")) {
             sequence.classList.remove("selected");
         }
@@ -129,7 +129,7 @@ function selectDropdownOption(id) {
         for (var i = 0; i < options.length; i++) {
             if (options[i].classList.contains("selected")) {
                 options[i].classList.remove("selected");
-                dataResultVar = "none";
+                dataResultVar = "all";
             }
         }
     }
@@ -211,9 +211,9 @@ function setStaticInstances(id) {
     var dropdownOptions = document.querySelector(selector);
     dropdownOptions.innerHTML = "";
 
-    if (id == "none") {
-        dropdownOptions.innerHTML += `<div class="dropdown-option" id="none" onclick="selectStaticDropdownOption(this.id, 'static-instance')">None</div>`;
-        selectStaticDropdownOption("none", "static-instance");
+    if (id == "all") {
+        dropdownOptions.innerHTML += `<div class="dropdown-option" id="all" onclick="selectStaticDropdownOption(this.id, 'static-instance')">All</div>`;
+        selectStaticDropdownOption("all", "static-instance");
     } else {
         var numInstances = classInstances.get(id);
 
@@ -234,9 +234,9 @@ function setStaticPos(id) {
     var dropdownOptions = document.querySelector(selector);
     dropdownOptions.innerHTML = "";
 
-    if (id == "none") {
-        dropdownOptions.innerHTML += `<div class="dropdown-option" id="none" onclick="selectStaticDropdownOption(this.id, 'static-pos')">None</div>`;
-        selectStaticDropdownOption("none", "static-pos");
+    if (id == "all") {
+        dropdownOptions.innerHTML += `<div class="dropdown-option" id="all" onclick="selectStaticDropdownOption(this.id, 'static-pos')">All</div>`;
+        selectStaticDropdownOption("all", "static-pos");
     } else {
         var posList;
         if (id == "scene") {
@@ -276,7 +276,7 @@ function selectStaticDropdownOption(id, dropdownMenu) {
         sequence.classList.add("selected");
     }
 
-    if (id == "none") {
+    if (id == "all") {
         if (sequence.classList.contains("selected")) {
             sequence.classList.remove("selected");
         }
@@ -286,7 +286,7 @@ function selectStaticDropdownOption(id, dropdownMenu) {
         for (var i = 0; i < options.length; i++) {
             if (options[i].classList.contains("selected")) {
                 options[i].classList.remove("selected");
-                dataResultVar = "none";
+                dataResultVar = "all";
             }
         }
     }
@@ -309,8 +309,8 @@ function selectStaticDropdownOption(id, dropdownMenu) {
 }
 
 function setSequenceVar() {
-    if (staticClass == "none") {
-        sequenceVar = "none";
+    if (staticClass == "all") {
+        sequenceVar = "all";
     } else {
         sequenceVar = staticClass + staticInstance + "_" + staticPos;
     }
@@ -334,7 +334,7 @@ function dataResultClick(id) {
                 dataResultVar = id;
 
                 // ensures that the sequence option is also selected 
-                if (sequenceVar == "none") {
+                if (sequenceVar == "all") {
                     if (datasetVar == "dynamic") { // dynamic
                         selectDropdownOption("battery");
                     } else if (datasetVar == "static") { // static
@@ -345,7 +345,7 @@ function dataResultClick(id) {
                 }
             } else { // if the option is selected
                 options[i].classList.remove("selected");
-                dataResultVar = "none";
+                dataResultVar = "all";
             }
         } else if (options[i].id != id && options[i].classList.contains("selected")) {
             options[i].classList.remove("selected");
@@ -367,11 +367,11 @@ function changeCommand() {
     } else if (datasetVar == "static") {
         command += "static/";
     } else {
-        command += "canonical/";
+        command += "static-canonical/";
     }
 
     // checks the sequence
-    if (sequenceVar != "none") {
+    if (sequenceVar != "all") {
         command += (sequenceVar + "/");
     }
 
