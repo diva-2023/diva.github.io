@@ -41,7 +41,7 @@
     <div class="container" id="main">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                DiVA360: The Dynamic Visual-Audio Dataset for Immersive Neural Fields<br>
+                DiVa360: The Dynamic Visual-Audio Dataset for Immersive Neural Fields<br>
             </h1>
         </div>
         <div class="row">
@@ -58,28 +58,27 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <ul class="nav nav-pills nav-justified" style="margin-bottom:15px">
                     <li>
-                        <a href="./DiVA/2023_DiVA_360_paper.pdf" target=”_blank”>
+                        <a href="./DiVA/DiVa360_2024.pdf" target=”_blank”>
                             <!-- icon by Debi Alpa Nugraha -->
                             <img src="./DiVA/images/paper.png" height="75px"><br>
                             <h4><strong>Paper</strong></h4>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#download-instructions">
                             <img src="./DiVA/images/download-icon.png" height="75px"><br>
                             <h4><strong>Download Data</strong></h4>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <br>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <span style="display: flex; flex-wrap: wrap; justify-content: space-around;">
                     <div style="width: 450px; margin: 5px; text-align: center;">
-                        <!-- <img src="./DiVA/images/put_fruit_data.gif" style="width: 100%;"> -->
                         <video controls autoplay loop muted style="width: 100%;">
                             <source
                                 src="https://github.com/diva360/diva360.github.io/raw/main/DiVA/images/put_fruit_data.mp4">
@@ -93,7 +92,7 @@
                     </div>
                 </span>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -116,9 +115,21 @@
                 <img src="./DiVA/images/teaser.png" class="img-responsive" alt="overview"><br>
 
                 <p class="text-justify">
-                    Advances in neural fields are enabling high-fidelity capture of the shape and appearance of
-                    static
-                    and dynamic scenes. However, their capabilities lag behind those offered by representations such
+                    Advances in neural fields are enablling high-fidelity capture of shape and appearance of dynamic 3D
+                    scenes. However, this capbabilities lag behind those offered by conventional representations such as
+                    2D videos because of algorithmic challenges and the lack of large-scale multi-view real-world
+                    datasets. We address the dataset limitations with DiVa-360, a real-world 360&deg
+                    <u>d</u>ynam<u>i</u>c <u>v</u>isu<u>a</u>l dataset that contains synchronized high-resolution and
+                    long-duration multi-view video sequences of table-scale scenes captured using a customized low-cost
+                    system with 53 cameras. It contains 21 object-centric sequences categorized by different motion
+                    types,25 intricate hand-object interaction sequences, and 8 long-duration sequences for a total of
+                    17.4M frames. In addition, we provide foreground-background segmentation masks, synchronized audio,
+                    and text descriptions. We benchmark the state-of-the-art dynamic neural field methods on DiVa-360
+                    and provide insights about existing methods and future challenges on long-duration neural field
+                    capture.
+
+                    <!-- Advances in neural fields are enabling high-fidelity capture of the shape and appearance of
+                    dynamic 3D scenes. However, their capabilities lag behind those offered by representations such
                     as
                     pixels or meshes due to algorithmic challenges and the lack of large-scale real-world datasets.
                     We
@@ -131,12 +142,12 @@
                     microphones for a total of 8.6M image frames and 1360 s of dynamic data. We provide detailed
                     text
                     descriptions for all scenes, foreground-background segmentation masks, category-specific 3D pose
-                    alignment for static objects, as well as metrics for comparison.
+                    alignment for static objects, as well as metrics for comparison. -->
                 </p>
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 col-md-offset-1" id="download-instructions">
                 <h3>
                     Downloading the Data
@@ -172,7 +183,7 @@
                     </div>
                     <div class="select-row">
                         <div class="heading">Sequence</div>
-                        <!-- Dynamic Options -->
+                
                         <div class="options sequence-options show-dropdown" id="dynamic-menu">
                             <button class="dropbtn col-md-12 option sequence-option sequence-button"
                                 onclick="clickDropdown()">
@@ -302,9 +313,9 @@
                             </div>
                         </div>
 
-                        <!-- Static Options -->
+                        
                         <div class="options sequence-options" id="static-menu">
-                            <!-- Object/Scene -->
+                            
                             <div class="static-dropdown-wrapper static-class">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-class')">
@@ -366,7 +377,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Instance Number -->
+                            
                             <div class="static-dropdown-wrapper static-instance">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-instance')">
@@ -379,7 +390,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Canonical/Random -->
+                            
                             <div class="static-dropdown-wrapper static-pos">
                                 <button class="dropbtn col-md-4 option sequence-option sequence-button"
                                     onclick="clickStaticDropdown('static-pos')">
@@ -394,7 +405,7 @@
                             </div>
                         </div>
 
-                        <!-- Canonical Options -->
+                       
                         <div class="options sequence-options" id="canonical-menu">
                             <button class="dropbtn col-md-12 option sequence-option sequence-button"
                                 onclick="clickDropdown()">
@@ -772,7 +783,7 @@
                     </div>
                 </details>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -804,25 +815,74 @@
                 <h3>
                     Dynamic Baseline Examples
                 </h3>
-                <p>Note: these videos have sound</p>
+                <h4>Object Centric Sequences</h4>
+                <!-- <p>Note: these videos have sound</p> -->
                 <span style="display: flex; flex-wrap: wrap; justify-content: space-around;">
                     <div style="width: 400px; margin: 5px; text-align: center;">
                         <video controls autoplay loop muted style="width: 100%;">
-                            <source
-                                src="https://github.com/diva360/diva360.github.io/raw/main/DiVA/images/drum_results.mp4">
+                            <source src="DiVA/images/dog/ingp.mp4">
                         </video>
-                        <p>Drum Per Frame Instant NGP</p>
+                        <p>Dog Per Frame Instant NGP</p>
                     </div>
                     <div style="width: 400px; margin: 5px; text-align: center;">
                         <video controls autoplay loop muted style="width: 100%;">
-                            <source
-                                src="https://github.com/diva360/diva360.github.io/raw/main/DiVA/images/penguin_results.mp4">
+                            <source src="DiVA/images/dog/kplanes.mp4">
                         </video>
-                        <p>Penguin Per Frame Instant NGP</p>
+                        <p>Dog K-Planes</p>
+                    </div>
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/dog/mixvoxels.mp4">
+                        </video>
+                        <p>Dog MixVoxels</p>
                     </div>
                 </span>
 
-                <h4>Comparison Between Instant NGP and Mixvoxels</h4>
+                <h4>Hand-Object Interaction Sequences</h4>
+                <span style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/xylophone/ingp.mp4">
+                        </video>
+                        <p>Xylophone Per Frame Instant NGP</p>
+                    </div>
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/xylophone/kplanes.mp4">
+                        </video>
+                        <p>Xylophone K-Planes</p>
+                    </div>
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/xylophone/mixvoxels.mp4">
+                        </video>
+                        <p>Xylophone MixVoxels</p>
+                    </div>
+                </span>
+
+                <h4>Long Duration Sequences</h4>
+                <span style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/legos/ingp.mp4">
+                        </video>
+                        <p>Legos Per Frame Instant NGP</p>
+                    </div>
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/legos/kplanes.mp4">
+                        </video>
+                        <p>Legos K-Planes</p>
+                    </div>
+                    <div style="width: 400px; margin: 5px; text-align: center;">
+                        <video controls autoplay loop muted style="width: 100%;">
+                            <source src="DiVA/images/legos/mixvoxels.mp4">
+                        </video>
+                        <p>Legos MixVoxels</p>
+                    </div>
+                </span>
+
+                <!-- <h4>Comparison Between Instant NGP and Mixvoxels</h4>
                 <p>Note: these videos have sound</p>
                 <span style="display: flex; flex-wrap: wrap; justify-content: space-around;">
                     <div style="width: 400px; margin: 5px; text-align: center;">
@@ -891,11 +951,11 @@
                         </video>
                         <p>Put Fruit K-Planes</p>
                     </div>
-                </span>
+                </span> -->
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h3>
                     Static Data Examples
@@ -980,7 +1040,7 @@
                     </div>
                 </span>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
